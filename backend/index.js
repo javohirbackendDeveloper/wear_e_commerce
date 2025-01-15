@@ -3,7 +3,6 @@ const cors = require("cors");
 const connect_DB = require("./libraries/config");
 const authRouter = require("./router/auth.routes");
 require("dotenv").config();
-const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const productRouter = require("./router/product.routes");
 const cartRouter = require("./router/cart.routes");
@@ -15,12 +14,11 @@ const app = express();
 const path = require("path");
 // ////////
 app.use(cors());
-app.use(bodyParser());
 app.use(express.json({ limit: "10mb" }));
 
 app.use(cookieParser());
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 // Routers
 app.use("/api/auth", authRouter);
 app.use("/api/product", productRouter);
