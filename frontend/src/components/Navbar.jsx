@@ -6,7 +6,6 @@ import { useCartStore } from "../stores/useCartStore";
 function Navbar() {
   const { user, logout } = useUserStore();
   const { cart } = useCartStore();
-  console.log(user === null);
 
   const isAdmin = user?.role === "admin";
 

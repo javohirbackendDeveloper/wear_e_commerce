@@ -12,8 +12,8 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import AdminPage from "./pages/AdminPage";
 import Category from "./pages/Category";
 import { useCartStore } from "./stores/useCartStore";
-import PurchaseSuccess from "./pages/PurchaseSuccess";
-import PurchaseCancel from "./pages/PurchaseCancel";
+// import PurchaseSuccess from "./pages/PurchaseSuccess";
+// import PurchaseCancel from "./pages/PurchaseCancel";
 // import CartItem from "./components/CartItem";
 
 function App() {
@@ -59,14 +59,14 @@ function App() {
           />
           <Route path="/category/:category" element={<Category />} />
           <Route path="/cart" element={user ? <Cart /> : <Login />} />
-          <Route
+          {/* <Route
             path="/purchase_success"
             element={user ? <PurchaseSuccess /> : <Login />}
           />
           <Route
             path="/purchase_cancel"
             element={user ? <PurchaseCancel /> : <Login />}
-          />
+          /> */}
         </Routes>
       </div>
       <Toaster />

@@ -76,7 +76,7 @@ export const useCartStore = create((set, get) => ({
     }));
     get().calculateTotals();
   },
-  
+
   updateQuantity: async (productId, quantity) => {
     if (quantity === 0) {
       get().removeFromCart(productId);

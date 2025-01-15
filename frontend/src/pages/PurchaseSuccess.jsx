@@ -6,38 +6,38 @@ import axios from "../lib/axios";
 import Confetti from "react-confetti";
 
 const PurchaseSuccessPage = () => {
-  const [isProcessing, setIsProcessing] = useState(true);
-  const { clearCart } = useCartStore();
-  const [error, setError] = useState(null);
+  // const [isProcessing, setIsProcessing] = useState(true);
+  // const { clearCart } = useCartStore();
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const handleCheckoutSuccess = async (sessionId) => {
-      try {
-        await axios.post("/payment/checkout-success", {
-          sessionId,
-        });
-        clearCart();
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsProcessing(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleCheckoutSuccess = async (sessionId) => {
+  //     try {
+  //       await axios.post("/payment/checkout-success", {
+  //         sessionId,
+  //       });
+  //       clearCart();
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       setIsProcessing(false);
+  //     }
+  //   };
 
-    const sessionId = new URLSearchParams(window.location.search).get(
-      "session_id"
-    );
-    if (sessionId) {
-      handleCheckoutSuccess(sessionId);
-    } else {
-      setIsProcessing(false);
-      setError("No session ID found in the URL");
-    }
-  }, [clearCart]);
+  //   const sessionId = new URLSearchParams(window.location.search).get(
+  //     "session_id"
+  //   );
+  //   if (sessionId) {
+  //     handleCheckoutSuccess(sessionId);
+  //   } else {
+  //     setIsProcessing(false);
+  //     setError("No session ID found in the URL");
+  //   }
+  // }, [clearCart]);
 
-  if (isProcessing) return "Processing...";
+  // if (isProcessing) return "Processing...";
 
-  if (error) return `Error: ${error}`;
+  // if (error) return `Error: ${error}`;
 
   return (
     <div className="h-screen flex items-center justify-center px-4">
@@ -90,7 +90,7 @@ const PurchaseSuccessPage = () => {
             </button>
             <Link
               to={"/"}
-              className="w-full bg-gray-700 hover:bg-gray-600 text-emerald-400 font-bold py-2 px-4 
+              className="w-full bg-gray-700 hover:bg-gray-600 text-emerald-400 font-bold py-2 px-4
             rounded-lg transition duration-300 flex items-center justify-center"
             >
               Continue Shopping
