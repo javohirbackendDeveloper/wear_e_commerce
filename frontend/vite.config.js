@@ -4,13 +4,13 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   build: {
-    outDir: "dist", // Build fayllari uchun alohida papka (masalan, dist)
+    outDir: "dist", // Build fayllari uchun chiqish papkasi
   },
   plugins: [react()],
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:4000", // API ga proxy qilish
+        target: "http://localhost:4000", // API uchun proxy
       },
     },
   },
