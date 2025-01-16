@@ -18,7 +18,7 @@ app.use(express.json({ limit: "10mb" }));
 
 app.use(cookieParser());
 
-// const __dirname = path.resolve();
+const __dirname = path.resolve();
 // Routers
 app.use("/api/auth", authRouter);
 app.use("/api/product", productRouter);
